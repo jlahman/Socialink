@@ -3,7 +3,8 @@ from urllib.request import urlopen
 import urllib.request
 
 class AvatarGrabber:
-	def grabAvatarGithub(self, url: str) -> str:
+	def grabAvatarGithub(self, username: str) -> str:
+		url = "https://github.com/"+username
 		page = urlopen(url)
 		html_bytes = page.read()
 		html = html_bytes.decode("utf-8")
@@ -16,4 +17,4 @@ class AvatarGrabber:
 		#urllib.request.urlretrieve(img_url, "avatar_github.png") #for saving the image if needed
 		return img_url
 
-print(AvatarGrabber().grabAvatarGithub("https://github.com/Keilith-L"))
+#print(AvatarGrabber().grabAvatarGithub("https://github.com/Keilith-L"))
