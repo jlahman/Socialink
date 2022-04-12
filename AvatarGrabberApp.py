@@ -4,7 +4,7 @@ import AvatarGrabber
 
 app = Flask(__name__)
 
-grabbableSites = ["github"] #, "twitter", "instagram"]
+grabbableSites = ["github", "twitter", "instagram"]
 
 @app.route("/api/v1/Avatars/<string:sitename>/<string:username>", methods=['GET'])
 def avatarEndpoint(sitename, username):

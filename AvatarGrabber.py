@@ -31,8 +31,7 @@ class AvatarGrabber:
 			return "Not Found"
 		html_bytes = page.read()
 		html = html_bytes.decode("utf-8")
-
-		pattern = "\"profile_pic_url_hd\":\".*\""
+		pattern = "\"profile_pic_url_hd\":\".*?\""
 		result_ele = re.findall(pattern, html)
 		img_url = re.findall("\".*\"", result_ele[0])
 		img_url = re.sub("\"", "", img_url[0])
