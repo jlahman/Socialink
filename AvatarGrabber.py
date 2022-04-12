@@ -5,7 +5,10 @@ import urllib.request
 class AvatarGrabber:
 	def grabAvatarGithub(self, username: str) -> str:
 		url = "https://github.com/"+username
-		page = urlopen(url)
+		try:
+			page = urlopen(url)
+		except:
+			return "Not Found"
 		html_bytes = page.read()
 		html = html_bytes.decode("utf-8")
 
